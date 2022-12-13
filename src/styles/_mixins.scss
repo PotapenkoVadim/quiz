@@ -1,0 +1,6 @@
+@mixin component-background {
+  box-shadow: 3px 3px 10px lightgray;
+  border: 1px solid lightgrey;
+  background-color: $component-background;
+  border-radius: 2px;
+}
