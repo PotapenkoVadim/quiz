@@ -15,7 +15,7 @@ export function reducer(state, action) {
         step: action.payload.step,
         answers: {
           ...state.answers,
-          [action.payload.step]: action.payload.answers
+          [action.payload.step]: action.payload.answers,
         },
         isInit: false,
       };

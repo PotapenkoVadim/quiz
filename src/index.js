@@ -5,15 +5,27 @@ import { createStore } from './data/store';
 import { reducer } from './data/reduce';
 import { moveNextStep, init } from './data/actions';
 import { configutation } from './configuration';
-import { setMarkerNumber, setQuizStepItemHeight, moveQuizList, getAnswers } from './utils';
+import {
+  setMarkerNumber,
+  setQuizStepItemHeight,
+  moveQuizList,
+  getAnswers,
+  setResultsByStep,
+} from './utils';
 
-const { initialState, selectors, steps: stepNames } = configutation;
+const {
+  initialState,
+  selectors,
+  steps: stepNames,
+  resultActiveClass,
+} = configutation;
 
 const store = createStore(reducer, initialState);
 
-const marker = document.getElementById(selectors.marker);
-const form = document.getElementById(selectors.form);
-const quizList = document.getElementById(selectors.quizList);
+const marker = document.querySelector(selectors.marker);
+const form = document.querySelector(selectors.form);
+const quizList = document.querySelector(selectors.quizList);
+const results = document.querySelector(selectors.result);
 
 const steps = quizList.children;
 const buttonStep1 = steps[0].querySelector(selectors.button);
@@ -25,12 +37,21 @@ const step3Questions = steps[2].querySelectorAll(selectors.input);
 
 store.subscribe(() => {
   const state = store.getState();
+  const { step, slideSize, isInit, answers } = state;
 
-  setMarkerNumber(state.step, marker);
+  setMarkerNumber(step, marker);
   moveQuizList(state, quizList);
 
-  if (state.isInit) {
-    setQuizStepItemHeight(state.slideSize, steps);
+  if (step) {
+    const resultSection = results.children[step - 1];
+
+    setResultsByStep(resultSection, answers[step]);
+  }
+
+  if (isInit) {
+    results.classList.add(resultActiveClass);
+
+    setQuizStepItemHeight(slideSize, steps);
   }
 });
 

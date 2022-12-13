@@ -1,6 +1,7 @@
 import { configutation } from './configuration';
 
-const { markerActiveClass } = configutation;
+const { markerActiveClass, resultDefaultAnswer, answerFieldAlertClass } =
+  configutation;
 
 export function setMarkerNumber(num, marker) {
   if (marker && num >= 0) {
@@ -23,4 +24,19 @@ export function moveQuizList({ step, slideSize }, quizList) {
 
 export function getAnswers(fields) {
   return [...fields].map(({ name, value }) => ({ name, value }));
+}
+
+export function setResultsByStep(resultSection, answers) {
+  const fields = [...resultSection.children].slice(1);
+
+  fields.map((field, index) => {
+    const answer = answers[index]?.value;
+
+    if (answer) {
+      field.innerHTML = `Answer ${index + 1}: ${answer}`;
+    } else {
+      field.innerHTML = `Answer ${index + 1}: ${resultDefaultAnswer}`;
+      field.classList.add(answerFieldAlertClass);
+    }
+  });
 }
