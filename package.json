@@ -3,13 +3,15 @@
   "version": "0.0.1",
   "description": "",
   "main": "index.js",
+  "homepage": "https://potapenkovadim.github.io/quiz-redux",
   "scripts": {
     "start": "webpack serve",
     "dev": "webpack --mode=development",
     "build": "webpack --mode=production",
     "lint": "eslint ./src",
     "lint:fix": "eslint --fix ./src",
-    "prepare": "husky install"
+    "prepare": "husky install",
+    "deploy": "npm run build && gh-pages -d dist"
   },
   "keywords": [],
   "author": "PotapenkoVadim",
@@ -22,6 +24,7 @@
     "eslint": "^8.29.0",
     "eslint-config-prettier": "^8.5.0",
     "eslint-plugin-prettier": "^4.2.1",
+    "gh-pages": "^4.0.0",
     "html-loader": "^4.2.0",
     "html-webpack-plugin": "^5.5.0",
     "husky": "^8.0.2",
