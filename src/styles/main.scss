@@ -51,3 +51,13 @@ body { font-family: Verdana, sans-serif; font-size: $font; }
     &_alert { color: $alert; }
   }
 }
+
+.stub { position: absolute; top: 0; left: 0; bottom: 0; right: 0; background: darkgray; z-index: 10;
+  display: none; align-items: center; justify-content: center; text-align: center;
+  &__alert { color: $alert; font-size: 1.5rem; font-weight: bold; }
+}
+
+@media (max-width: 770px) {
+  .stub { display: flex; }
+  .app__wrapper { display: none; }
+}
