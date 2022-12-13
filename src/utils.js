@@ -23,14 +23,14 @@ export function moveQuizList({ step, slideSize }, quizList) {
 }
 
 export function getAnswers(fields) {
-  return [...fields].map(({ name, value }) => ({ name, value }));
+  return [...fields].map(({ value }) => value);
 }
 
 export function setResultsByStep(resultSection, answers) {
   const fields = [...resultSection.children].slice(1);
 
   fields.map((field, index) => {
-    const answer = answers[index]?.value;
+    const answer = answers[index];
 
     if (answer) {
       field.innerHTML = `Answer ${index + 1}: ${answer}`;

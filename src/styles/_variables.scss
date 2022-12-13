@@ -12,3 +12,9 @@ $field: #CCCCCC;
   background-color: $component-background;
   border-radius: 2px;
 }
+
+@mixin flex-center {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
