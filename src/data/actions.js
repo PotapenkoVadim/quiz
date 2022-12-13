@@ -4,13 +4,13 @@ export const NEXT_STEP = 'NEXT_STEP';
 export function init(slideSize) {
   return {
     type: INIT,
-    payload: slideSize
+    payload: slideSize,
   };
 }
 
-export function moveNextStep(step) {
+export function moveNextStep(payload) {
   return {
     type: NEXT_STEP,
-    payload: step
+    payload,
   };
 }

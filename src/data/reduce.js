@@ -6,14 +6,18 @@ export function reducer(state, action) {
       return {
         ...state,
         slideSize: action.payload,
-        isInit: true
+        isInit: true,
       };
 
     case NEXT_STEP:
       return {
         ...state,
-        step: action.payload,
-        isInit: false
+        step: action.payload.step,
+        answers: {
+          ...state.answers,
+          [action.payload.step]: action.payload.answers
+        },
+        isInit: false,
       };
 
     default:
