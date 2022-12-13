@@ -17,7 +17,7 @@ const {
   initialState,
   selectors,
   steps: stepNames,
-  resultActiveClass,
+  classes,
 } = configutation;
 
 const store = createStore(reducer, initialState);
@@ -49,7 +49,7 @@ store.subscribe(() => {
   }
 
   if (isInit) {
-    results.classList.add(resultActiveClass);
+    results.classList.add(classes.resultActiveClass);
 
     setQuizStepItemHeight(slideSize, steps);
   }

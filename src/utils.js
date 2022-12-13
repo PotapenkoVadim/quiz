@@ -1,14 +1,13 @@
 import { configutation } from './configuration';
 
-const { markerActiveClass, resultDefaultAnswer, answerFieldAlertClass } =
-  configutation;
+const { classes, resultDefaultAnswer } = configutation;
 
 export function setMarkerNumber(num, marker) {
   if (marker && num >= 0) {
     const displayedNum = num + 1;
 
     marker.innerHTML = displayedNum.toString();
-    marker.classList.add(markerActiveClass);
+    marker.classList.add(classes.markerActiveClass);
   }
 }
 
@@ -36,7 +35,7 @@ export function setResultsByStep(resultSection, answers) {
       field.innerHTML = `Answer ${index + 1}: ${answer}`;
     } else {
       field.innerHTML = `Answer ${index + 1}: ${resultDefaultAnswer}`;
-      field.classList.add(answerFieldAlertClass);
+      field.classList.add(classes.answerFieldAlertClass);
     }
   });
 }

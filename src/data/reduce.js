@@ -1,4 +1,4 @@
-import { INIT, NEXT_STEP } from './actions';
+import { INIT, MOVE_NEXT_STEP } from './actions';
 
 export function reducer(state, action) {
   switch (action.type) {
@@ -9,7 +9,7 @@ export function reducer(state, action) {
         isInit: true,
       };
 
-    case NEXT_STEP:
+    case MOVE_NEXT_STEP:
       return {
         ...state,
         step: action.payload.step,

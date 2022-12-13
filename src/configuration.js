@@ -11,9 +11,11 @@ export const configutation = {
     input: 'input',
     result: '#result',
   },
-  markerActiveClass: 'marker_active',
-  resultActiveClass: 'result_active',
-  answerFieldAlertClass: 'result__answer_alert',
+  classes: {
+    markerActiveClass: 'marker_active',
+    resultActiveClass: 'result_active',
+    answerFieldAlertClass: 'result__answer_alert',
+  },
   steps: {
     first: 1,
     second: 2,

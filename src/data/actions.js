@@ -1,5 +1,5 @@
 export const INIT = '__INIT__';
-export const NEXT_STEP = 'NEXT_STEP';
+export const MOVE_NEXT_STEP = 'MOVE_NEXT_STEP';
 
 export function init(slideSize) {
   return {
@@ -10,7 +10,7 @@ export function init(slideSize) {
 
 export function moveNextStep(payload) {
   return {
-    type: NEXT_STEP,
+    type: MOVE_NEXT_STEP,
     payload,
   };
 }

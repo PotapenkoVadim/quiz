@@ -3,7 +3,7 @@
   "version": "0.0.1",
   "description": "",
   "main": "index.js",
-  "homepage": "https://potapenkovadim.github.io/quiz-redux",
+  "homepage": "https://potapenkovadim.github.io/quiz",
   "scripts": {
     "start": "webpack serve",
     "dev": "webpack --mode=development",
