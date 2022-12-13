@@ -13,12 +13,7 @@ import {
   setResultsByStep,
 } from './utils';
 
-const {
-  initialState,
-  selectors,
-  steps: stepNames,
-  classes,
-} = configutation;
+const { initialState, selectors, steps: stepNames, classes } = configutation;
 
 const store = createStore(reducer, initialState);
 
