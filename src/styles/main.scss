@@ -17,7 +17,9 @@ body { font-family: Verdana, sans-serif; font-size: $font; }
 }
 
 .marker { border-radius: 50%; padding: 30px 35px; background-color: $accent; border: 1px solid lightgray;
-  font-size: 2rem; font-weight: bold; color: white; cursor: default;
+  font-size: 2rem; font-weight: bold; color: white; cursor: default; display: none;
+
+  &_active { display: block; }
 }
 
 .form { width: 50%; height: 100%; overflow: hidden;
@@ -29,8 +31,11 @@ body { font-family: Verdana, sans-serif; font-size: $font; }
   &__label { position: absolute; top: 10px; left: 20px; font-size: 1rem; color: $accent; transition: all 0.2s ease-in-out; }
   &__field:focus ~ &__label, &__field:not(:invalid) ~ &__label { font-size: 0.5rem; color: darkgrey; top: 1px; left: 12px; }
   &__button { display: flex; justify-content: flex-end; }
+}
 
-  &__step { height: 100%; padding: 35px 0; background-color: $component-background; }
+.quiz {
+  &__list { flex: 1; flex-shrink: 0; transition: all 0.4s ease-in-out; }
+  &__step { height: 100%; padding: 35px 0; background-color: $component-background; border-bottom: 1px solid lightgray; }
 }
 
 .button { outline: none; padding: 10px 22px; border-radius: 6px; border: none; font-size: 1.13rem; cursor: pointer;
